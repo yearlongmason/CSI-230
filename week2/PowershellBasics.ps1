@@ -45,11 +45,12 @@
 #}
 
 #Q10
-cd $PSScriptRoot
-$files = Get-ChildItem
+#cd $PSScriptRoot
+#$files = Get-ChildItem
 
-$folderPath = "$PSScriptRoot\outfolder\"
-$filePath =  $folderPath + "out.csv"
-Write-Host $files
-Write-Host $folderPath
-Write-Host $filePath
+#$folderPath = "$PSScriptRoot\outfolder\"
+#$filePath =  Join-Path -Path $folderPath "out.csv"
+#$files | Where-Object { $_.Extension -eq ".ps1" } | Export-Csv -Path $filePath
+
+#Q11
+
