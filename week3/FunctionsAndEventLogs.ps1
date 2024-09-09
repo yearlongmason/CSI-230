@@ -49,7 +49,14 @@ $loginoutsTable
 #>
 
 #Q4
-#getLogonoffTable(5);
+#getLogonoffTable(5)
 
-#Q5
-Get-EventLog System | Where-Object { $_.InstanceId -eq 1074}#Microsoft-Windows-Winlogon -After (Get-Date).AddDays(-5)
+#Q5 #Start = 6005 | Shutdown = 6006
+#getStartShutdownTable(5)
+
+#Q6
+$logonoffTable = getLogonoffTable(5)
+$logonoffTable
+
+$startShutdownTable = getStartShutdownTable(5)
+$startShutdownTable
