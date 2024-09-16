@@ -2,3 +2,5 @@
 clear
 
 getSpecificLogs "index.html" "200" "Chrome"
+
+ApacheLogs1 | Format-Table -AutoSize -Wrap
