@@ -1,5 +1,10 @@
 ﻿clear
 
+<#***********************************************
+Function: Apache Logs 1
+Input:    None
+Output:   Table of formatted apache logs 
+***********************************************#>
 function ApacheLogs1(){
     $logsNotFormatted = Get-Content C:\xampp\apache\logs\access.log
     $tableRecords = @()
@@ -14,12 +19,8 @@ function ApacheLogs1(){
                                             "Protocol" = $words[7]; `
                                             "Response" = $words[8]; `
                                             "Referrer" = $words[10]; `
-                                            "Client" = $words[11..($words.Count)];}
-
-        #Write-Output $logsNotFormatted[$i] #$words #[11..($words.Count)]
+                                            "Client" = $words[11..($words.Count - 1)];}
     }
-    $tableRecords | Where-Object { $_.IP -ilike "10.*" }s
-    
-}
 
-ApacheLogs1
+    return $tableRecords | Where-Object { $_.IP -ilike "10.*" }
+}
