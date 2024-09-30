@@ -1,5 +1,3 @@
-﻿clear
-
 <#***********************************************
 Function: Apache Logs 1
 Input:    None
