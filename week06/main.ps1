@@ -190,10 +190,8 @@ while($operation){
 
     elseif($choice -eq 9){
         $days = Read-Host -Prompt "Please enter the number of days"
-        
-        $userLogins = (getFailedLogins $days | Group-Object User | Select Count, Name)
 
-        $atRiskUsers = ($userLogins | Where-Object { $_.Count -gt 10 })
+        $atRiskUsers = getAtRiskUsers $days
 
         Write-Host ($atRiskUsers | Format-Table | Out-String)
     }

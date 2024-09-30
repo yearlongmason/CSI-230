@@ -64,3 +64,11 @@ function getFailedLogins($timeBack){
 
     return $failedloginsTable
 } # End of function getFailedLogins
+
+# Return table with at risk users
+function getAtRiskUsers($days){
+    $userLogins = (getFailedLogins $days | Group-Object User | Select Count, Name)
+
+    $atRiskUsers = ($userLogins | Where-Object { $_.Count -gt 10 })
+    return $atRiskUsers
+}
