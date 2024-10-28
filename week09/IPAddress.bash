@@ -1,4 +1,5 @@
 #/!bin/bash
 
-ip addr show $(ip route | awk '/default/ { print $5 }') | \
-grep "inet" | head -n 1 | awk '/inet/ {print $2}' | cut -d'/' -f1
+ip addr | awk '{print $2}' | \
+grep -o -E "[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}" | \
+grep -v -E "127|255"
