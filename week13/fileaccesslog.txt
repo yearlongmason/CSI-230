@@ -1,5 +1,3 @@
-To: mason.lee@mymail.champlain.edu
-Subject: Access Logs
 File was accessed on 2024-11-18 12-44-31
 File was accessed on 2024-11-18 12-44-33
 File was accessed on 2024-11-18 12-44-34
